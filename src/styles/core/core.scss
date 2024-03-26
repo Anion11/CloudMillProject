@@ -12,16 +12,16 @@ html {
 
   @each $breakpoint in (375px, 576px, 768px, 1024px) {
     @media (min-width: #{$breakpoint}) {
-      font-size: getVw($fs, $breakpoint / 100);
+      font-size: getVw($fs, calc($breakpoint / 100));
     }
   }
 
   @media (min-width: 1280px) {
-    font-size: getVw($fs, 1920px / 100);
+    font-size: getVw($fs, calc(1920px / 100));
   }
 
   @media (min-width: 1920px) {
-    font-size: getVw($fs, 1920px / 100);
+    font-size: getVw($fs, calc(1920px / 100));
   }
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -64,7 +64,7 @@ $breakpoints: (
 }
 
 @function getVw($px, $width) {
-  @return $px / $width * 1vw;
+  @return calc($px / $width * 1vw);
 }
 
 $transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);

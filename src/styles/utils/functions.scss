@@ -1,11 +1,15 @@
-// @function rem($size) {
-//   @return math.div($size, $fs) * 1rem;
-// }
+@use 'sass:map';
+@use 'sass:math';
+@use 'sass:string';
 
-// @function getVw($px, $width) {
-//   @return $px / $width * 1vw;
-// }
+@function rem($size) {
+  @return math.div($size, $fs) * 1rem;
+}
 
-// @function font-url($filename-without-extension) {
-//   @return url('../assets/fonts/#{$filename-without-extension}.woff');
-// }
+@function getVw($px, $width) {
+  @return calc($px / $width * 1vw);
+}
+
+@function font-url($filename-without-extension) {
+  @return url('../assets/fonts/#{$filename-without-extension}.woff');
+}
