@@ -1,4 +1,20 @@
+-
+  const headerMenu = [
+    { text: 'О компании', link: '#' },
+    { text: 'Новости', link: '#' },
+    { text: 'Где купить', link: '#' },
+    { text: 'Контакты', link: '#' },
+  ]
 
 header.header
   .inner
-    p Header
+    .header__burger
+    .header__logo
+      +picture("logo.png")
+    .header__btns
+    nav.header__nav
+      .header__menu
+        each menuItem in headerMenu
+          a.header__menu-item(href=menuItem.link) !{menuItem.text}
+      a.header__contact(href='tel:+78124485465') 8 812 448-54-65
+    +button('Стать партнером', '#', false, 'button--grey')
