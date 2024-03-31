@@ -1,30 +1,59 @@
 .button {
   position: relative;
   display: flex;
-  padding: 0 rem(24px);
-  height: rem(60px);
-  border-radius: rem(8px);
-  background: var(--1, #62215b);
+  padding: rem(25px) rem(24px);
+  border-radius: rem(16px);
+  background: $magenta;
   justify-content: center;
   align-items: center;
   border: 1px solid transparent;
   color: #fff;
-  font-family: TT Rounds Neue;
-  font-size: rem(16px);
-  font-weight: 620;
+  font-family: $fontRubik;
+  font-size: rem(18px);
+  font-weight: 500;
   text-align: center;
   cursor: pointer;
   text-transform: uppercase;
   transition: $transition;
   white-space: nowrap;
-
   &:hover {
-    background: var(--2, #c19f86);
+    background: $magentaBold;
+  }
+  &:active {
+    background: $magenta;
   }
   &:disabled {
     background: #f0e7ef;
     pointer-events: none;
-    color: var(--1, #62215b);
     opacity: 0.3;
+  }
+  &--empty {
+    background: unset;
+    color: $magenta;
+    border: 2px solid $magenta;
+    &:hover {
+      background: $magenta;
+    }
+  }
+  &--pd-x-l {
+    padding-left: rem(32px);
+    padding-right: rem(32px);
+  }
+  &--icon {
+    padding: rem(25px);
+    color: $blackGreen;
+    background: $grey2;
+    &:hover {
+      color: #fff;
+      background: $magenta;
+    }
+  }
+  &--grey {
+    background: $grey;
+    color: $blackGreen;
+    &:hover {
+      background: $magenta;
+      color: #fff;
+    }
   }
 }

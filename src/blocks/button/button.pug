@@ -1,5 +1,7 @@
 mixin button(text, href, disabled, allMods)
   if href
     a.button(class=allMods data-btn href=href, disabled=disabled)&attributes(attributes)=text
+      block
   else
     button.button(class=allMods, data-btn disabled=disabled)&attributes(attributes)=text
+      block

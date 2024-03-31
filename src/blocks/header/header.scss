@@ -1,3 +1,76 @@
+$headerTop: 24px;
 .header {
   flex: 0 1;
+  min-height: rem(calc(90px + $headerTop));
+  color: $blackGreen;
+  &__wrapper {
+    position: fixed;
+    width: 100%;
+    top: rem($headerTop);
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: rem(8px) rem(8px) rem(8px) rem(32px);
+    border: 2px solid #F0F0F0;
+    border-radius: rem(20px);
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px rem(14px) rem(24px) 0px rgba(0, 0, 0, 0.04);
+  }
+  &__burger {
+    span {
+
+    }
+  }
+  &__logo {
+    width: rem(172px);
+    margin-right: rem(150px);
+  }
+  &__btns {
+    display: flex;
+    gap: rem(4px);
+    margin-right: rem(200px);
+  }
+  &__menu {
+    display: flex;
+    gap: rem(32px);
+    margin-right: rem(85px);
+    font: 400 rem(18px) $fontRubik;
+    line-height: 1.16;
+    &-item {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background: currentColor;
+        bottom: -10%;
+        left: 0;
+      }
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &__contact {
+    position: relative;
+    margin-right: rem(130px);
+    font: 600 rem(18px) $fontRubik;
+    line-height: 1.16;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      background: currentColor;
+      bottom: -10%;
+      left: 0;
+    }
+    &:hover {
+      &::before {
+        width: 100%;
+      }
+    }
+  }
 }

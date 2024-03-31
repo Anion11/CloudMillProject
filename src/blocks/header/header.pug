@@ -7,14 +7,21 @@
   ]
 
 header.header
-  .inner
-    .header__burger
-    .header__logo
-      +picture("logo.png")
-    .header__btns
-    nav.header__nav
-      .header__menu
-        each menuItem in headerMenu
-          a.header__menu-item(href=menuItem.link) !{menuItem.text}
-      a.header__contact(href='tel:+78124485465') 8 812 448-54-65
-    +button('Стать партнером', '#', false, 'button--grey')
+  .header__wrapper
+    .inner.inner--no-max-w
+      .header__content
+        .header__burger
+          span
+          span
+          span
+        a(href="/").header__logo
+          +picture("logo.png")
+        .header__btns
+          +button('Продукция', '#', false)
+          +button('', '#', false, 'button--icon')
+            +search
+        nav.header__menu
+          each menuItem in headerMenu
+            a.header__menu-item(href=menuItem.link) !{menuItem.text}
+        a.header__contact(href='tel:88124485465') 8 812 448-54-65
+        +button('Стать партнером', '#', false, 'button--grey button--pd-x-l')

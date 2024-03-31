@@ -1,6 +1,7 @@
 @use 'sass:map';
 
-$font: 'Roboto';
+$font: 'TT Rounds Neue', 'Arial', sans-serif;
+$fontRubik: 'Rubik', 'Arial', sans-serif;
 $fs: 16px;
 $black: #181d1d;
 $bg: #fcfcff;
@@ -76,3 +77,12 @@ $col-part-d: '(#{$col-width-d} + #{$col-gap-d})';
 $transition-timing-function: cubic-bezier(0.33, 1, 0.68, 1);
 $transition-duration: 0.5s;
 $transition: $transition-duration $transition-timing-function;
+
+// colors
+
+$blackGreen: rgb(54, 74, 70);
+$coldGreen: rgba(0, 170, 136);
+$magenta: rgb(221, 87, 153);
+$magentaBold:rgb(199, 57, 127);
+$grey: rgba(244, 244, 244);
+$grey2: rgba(243, 243, 243);
