@@ -1,75 +1,190 @@
-$headerTop: 24px;
+$header-top: 24px;
+
+@media #{media('<',t)} {
+  $header-top: 12px;
+}
+
 .header {
   flex: 0 1;
-  min-height: rem(calc(90px + $headerTop));
-  color: $blackGreen;
+  min-height: rem(calc(90px + $header-top));
+  color: $black-green;
+
+  @media #{media('<',t)} {
+    min-height: rem(calc(60px + $header-top));
+  }
+
   &__wrapper {
     position: fixed;
+    top: rem($header-top);
     width: 100%;
-    top: rem($headerTop);
+    transform: translateY(0);
+    transition: transform $transition;
   }
+
+  &-hidden {
+    /* stylelint-disable-next-line selector-class-pattern */
+    .header__wrapper {
+      transform: translateY(-150%);
+    }
+  }
+
   &__content {
     display: flex;
     align-items: center;
-    padding: rem(8px) rem(8px) rem(8px) rem(32px);
-    border: 2px solid #F0F0F0;
+    padding: rem(6px) rem(6px) rem(6px) rem(30px);
+    border: 2px solid $grey2;
     border-radius: rem(20px);
-    background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0px rem(14px) rem(24px) 0px rgba(0, 0, 0, 0.04);
-  }
-  &__burger {
-    span {
+    box-shadow: 0 rem(14px) rem(24px) 0 rgb(0 0 0 / 4%);
+    background: rgb(255 255 255 / 70%);
+    backdrop-filter: blur(rem(8px));
 
+    @media #{media('<',t)} {
+      justify-content: space-between;
+      padding: rem(6px) rem(6px) rem(6px) rem(14px);
+      border: 1px solid $grey2;
+      border-radius: rem(12px);
+    }
+
+    @media #{media('<',m)} {
+      padding: rem(6px);
+      gap: rem(12px);
+      border-radius: rem(12px);
     }
   }
+
+  &__burger {
+    display: none;
+    width: rem(44px);
+    height: rem(44px);
+    border-radius: rem(8px);
+    background: $magenta;
+    transition: background-color $transition;
+    cursor: pointer;
+
+    @media #{media('<',m)} {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      gap: rem(4.5px);
+    }
+
+    &:hover,
+    &:active {
+      background: $magenta-bold;
+    }
+
+    span {
+      display: block;
+      width: rem(15.5px);
+      height: 1.5px;
+      background: #fff;
+    }
+  }
+
   &__logo {
     width: rem(172px);
-    margin-right: rem(150px);
+    margin-right: auto;
+
+    @media #{media('<',t)} {
+      width: rem(100px);
+      margin-right: 0;
+    }
   }
+
   &__btns {
     display: flex;
     gap: rem(4px);
     margin-right: rem(200px);
+
+    @media #{media('<',t)} {
+      margin-right: 0;
+    }
   }
+
   &__menu {
     display: flex;
     gap: rem(32px);
-    margin-right: rem(85px);
-    font: 400 rem(18px) $fontRubik;
+    margin-right: rem(84px);
+    font: 400 rem(18px) $font-rubik;
     line-height: 1.16;
+
     &-item {
       position: relative;
+      white-space: nowrap;
+
       &::before {
         content: "";
         position: absolute;
-        height: 2px;
-        background: currentColor;
         bottom: -10%;
         left: 0;
+        width: 0;
+        height: rem(2px);
+        transition: width $transition;
       }
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -10%;
+        right: 0;
+        width: 0;
+        height: rem(2px);
+        background: currentcolor;
+        transition: width $transition;
+      }
+
       &:hover {
         &::before {
           width: 100%;
+          background: currentcolor;
+        }
+
+        &::after {
+          width: 100%;
+          background: unset;
         }
       }
     }
   }
+
   &__contact {
     position: relative;
-    margin-right: rem(130px);
-    font: 600 rem(18px) $fontRubik;
+    margin-right: rem(129px);
+    font: 600 rem(18px) $font-rubik;
     line-height: 1.16;
+    white-space: nowrap;
+
     &::before {
       content: "";
       position: absolute;
-      height: 2px;
-      background: currentColor;
       bottom: -10%;
       left: 0;
+      width: 0;
+      height: rem(2px);
+      transition: width $transition;
     }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -10%;
+      right: 0;
+      width: 0;
+      height: rem(2px);
+      background: currentcolor;
+      transition: width $transition;
+    }
+
     &:hover {
       &::before {
         width: 100%;
+        background: currentcolor;
+      }
+
+      &::after {
+        width: 100%;
+        background: 0 0;
       }
     }
   }

@@ -1,56 +1,92 @@
 .button {
   position: relative;
   display: flex;
+  gap: rem(16px);
   padding: rem(25px) rem(24px);
   border-radius: rem(16px);
   background: $magenta;
   justify-content: center;
   align-items: center;
-  border: 1px solid transparent;
-  color: #fff;
-  font-family: $fontRubik;
-  font-size: rem(18px);
-  font-weight: 500;
+  font: 500 rem(18px) $font-rubik;
+  line-height: rem(0px);
   text-align: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: $transition;
+  color: #fff;
+  transition: all $transition;
   white-space: nowrap;
-  &:hover {
-    background: $magentaBold;
+  cursor: pointer;
+
+  @media #{media('<',t)} {
+    padding: rem(14px) rem(12px);
+    border-radius: rem(8px);
+    font-size: rem(12px);
   }
+
+  &:hover {
+    background: $magenta-bold;
+  }
+
   &:active {
     background: $magenta;
   }
+
   &:disabled {
     background: #f0e7ef;
     pointer-events: none;
     opacity: 0.3;
   }
+
   &--empty {
+    border: 2px solid $magenta;
     background: unset;
     color: $magenta;
-    border: 2px solid $magenta;
+
     &:hover {
       background: $magenta;
     }
+
+    &:active {
+      background: $magenta-light;
+    }
   }
-  &--pd-x-l {
-    padding-left: rem(32px);
-    padding-right: rem(32px);
+
+  &--pd-l {
+    padding: rem(26.5px) rem(32px);
+
+    @media #{media('<',t)} {
+      padding: rem(16px) rem(24px);
+    }
   }
+
   &--icon {
-    padding: rem(25px);
-    color: $blackGreen;
-    background: $grey2;
-    &:hover {
-      color: #fff;
-      background: $magenta;
+    transition: background-color $transition, color .1ms ease;
+
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+
+      @media #{media('<',t)} {
+        width: rem(16px);
+        height: rem(16px);
+      }
+    }
+
+    &-pd-l {
+      padding: rem(25px);
+
+      @media #{media('<',t)} {
+        padding: rem(14px);
+      }
+    }
+
+    &-reverse {
+      flex-direction: row-reverse;
     }
   }
+
   &--grey {
     background: $grey;
-    color: $blackGreen;
+    color: $black-green;
+
     &:hover {
       background: $magenta;
       color: #fff;

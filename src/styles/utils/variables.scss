@@ -1,7 +1,7 @@
 @use 'sass:map';
 
 $font: 'TT Rounds Neue', 'Arial', sans-serif;
-$fontRubik: 'Rubik', 'Arial', sans-serif;
+$font-rubik: 'Rubik', 'Arial', sans-serif;
 $fs: 16px;
 $black: #181d1d;
 $bg: #fcfcff;
@@ -80,9 +80,10 @@ $transition: $transition-duration $transition-timing-function;
 
 // colors
 
-$blackGreen: rgb(54, 74, 70);
-$coldGreen: rgba(0, 170, 136);
-$magenta: rgb(221, 87, 153);
-$magentaBold:rgb(199, 57, 127);
-$grey: rgba(244, 244, 244);
-$grey2: rgba(243, 243, 243);
+$black-green: rgb(54 74 70);
+$cold-green: rgb(0 170 136);
+$magenta: rgb(221 87 153);
+$magenta-bold: rgb(199 57 127);
+$magenta-light: #EC6EAC;
+$grey: rgb(244 244 244);
+$grey2: rgb(243 243 243);
