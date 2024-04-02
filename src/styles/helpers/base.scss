@@ -55,6 +55,7 @@ img {
 a {
   display: inline-block;
   text-decoration: none;
+  color: inherit;
   transition: 0.3s;
 }
 
@@ -105,10 +106,56 @@ blockquote {
     @media #{media('<',m)} {
       padding: 0 10px;
     }
+
+    &--no-max-w {
+      max-width: unset;
+    }
   }
 
   main {
     flex: 1 0;
+  }
+
+  .text {
+    &-t-none {
+      @media #{media('<',t)} {
+        display: none;
+      }
+    }
+
+    &-t-only {
+      display: none;
+
+      @media #{media('<',t)} {
+        display: block;
+      }
+    }
+
+    &-mob-none {
+      @media #{media('<',m)} {
+        display: none;
+      }
+    }
+
+    &-mob-only {
+      display: none;
+
+      @media #{media('<',m)} {
+        display: block;
+      }
+    }
+
+    &-light {
+      font-weight: 300;
+    }
+
+    &-normal {
+      font-weight: 400;
+    }
+
+    &-bold {
+      font-weight: 700;
+    }
   }
 }
 

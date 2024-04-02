@@ -1,30 +1,95 @@
 .button {
   position: relative;
   display: flex;
-  padding: 0 rem(24px);
-  height: rem(60px);
-  border-radius: rem(8px);
-  background: var(--1, #62215b);
+  gap: rem(16px);
+  padding: rem(25px) rem(24px);
+  border-radius: rem(16px);
+  background: $magenta;
   justify-content: center;
   align-items: center;
-  border: 1px solid transparent;
-  color: #fff;
-  font-family: TT Rounds Neue;
-  font-size: rem(16px);
-  font-weight: 620;
+  font: 500 rem(18px) $font-rubik;
+  line-height: rem(0px);
   text-align: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  transition: $transition;
+  color: #fff;
+  transition: all $transition;
   white-space: nowrap;
+  cursor: pointer;
+
+  @media #{media('<',t)} {
+    padding: rem(14px) rem(12px);
+    border-radius: rem(8px);
+    font-size: rem(12px);
+  }
 
   &:hover {
-    background: var(--2, #c19f86);
+    background: $magenta-bold;
   }
+
+  &:active {
+    background: $magenta;
+  }
+
   &:disabled {
     background: #f0e7ef;
     pointer-events: none;
-    color: var(--1, #62215b);
     opacity: 0.3;
+  }
+
+  &--empty {
+    border: 2px solid $magenta;
+    background: unset;
+    color: $magenta;
+
+    &:hover {
+      background: $magenta;
+    }
+
+    &:active {
+      background: $magenta-light;
+    }
+  }
+
+  &--pd-l {
+    padding: rem(26.5px) rem(32px);
+
+    @media #{media('<',t)} {
+      padding: rem(16px) rem(24px);
+    }
+  }
+
+  &--icon {
+    transition: background-color $transition, color .1ms ease;
+
+    svg {
+      width: rem(24px);
+      height: rem(24px);
+
+      @media #{media('<',t)} {
+        width: rem(16px);
+        height: rem(16px);
+      }
+    }
+
+    &-pd-l {
+      padding: rem(25px);
+
+      @media #{media('<',t)} {
+        padding: rem(14px);
+      }
+    }
+
+    &-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--grey {
+    background: $grey;
+    color: $black-green;
+
+    &:hover {
+      background: $magenta;
+      color: #fff;
+    }
   }
 }

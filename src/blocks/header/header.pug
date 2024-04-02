@@ -1,4 +1,30 @@
+-
+  const headerMenu = [
+    { text: 'О компании', link: '#' },
+    { text: 'Новости', link: '#' },
+    { text: 'Где купить', link: '#' },
+    { text: 'Контакты', link: '#' },
+  ]
 
 header.header
-  .inner
-    p Header
+  .header__wrapper
+    .inner.inner--no-max-w
+      .header__content
+        .header__burger
+          span
+          span
+          span
+        a(href="/").header__logo
+          +picture("logo.png")
+        .header__btns
+          +button('Продукция', '#', false, 'text-mob-none button--icon button--icon-reverse')
+            +more
+          +button('', '#', false, 'button--icon button--grey button--icon-pd-l')
+            +search
+          +button('', 'tel:88124485465', false, 'text-t-only text-mob-none button--icon button--grey button--icon-pd-l')
+            +tel
+        nav.header__menu.text-t-none
+          each menuItem in headerMenu
+            a.header__menu-item(href=menuItem.link) !{menuItem.text}
+        a.header__contact.text-t-none(href='tel:88124485465') 8 812 448-54-65
+        +button('Стать партнером', '#', false, 'text-t-none button--grey button--pd-l')

@@ -5,7 +5,7 @@
   "description": "simple bem pug+scss template",
   "license": "MIT",
   "scripts": {
-    "start": "gulp pugMixins && vite",
+    "dev": "gulp pugMixins && vite",
     "build": "gulp pugMixins && vite build && node .change-path.js && gulp copyFiles",
     "preview": "vite preview",
     "block": "node .create-block.js",
