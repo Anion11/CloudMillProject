@@ -1,3 +1,190 @@
 .footer {
   flex: 0 1;
+
+  &__content {
+    position: relative;
+    padding: rem(80px) 0 rem(50px);
+    background-color: $grey2;
+    border-radius: rem(48px);
+
+    @media #{media('<',t)} {
+      padding: rem(32px) 0 rem(36px);
+    }
+
+    @media #{media('<',m)} {
+      padding: rem(32px) 0;
+    }
+  }
+
+  &__top {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(20px);
+    z-index: 1;
+  }
+
+  &__image {
+    display: grid;
+    gap: rem(60px);
+  }
+
+  &__menu {
+    font: 600 rem(40px) $font-rubik;
+    line-height: rem(36px);
+    color: $black-green;
+
+    @media #{media('<',t)} {
+      font-size: rem(24px);
+      line-height: rem(21.6px);
+    }
+
+    &-item {
+      display: block;
+      &:not(:first-child) {
+        margin-top: rem(24px);
+        @media #{media('<',t)} {
+          margin-top: rem(12px);
+        }
+      }
+      &:hover {
+        color: $magenta;
+      }
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    gap: rem(12px);
+    font: 600 rem(24px) $font;
+    line-height: rem(21.6px);
+    color: $black-green;
+
+    @media #{media('<',t)} {
+      font-size: rem(16px);
+      line-height: rem(14.4px);
+    }
+
+    a:hover {
+      color: $magenta;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: rem(8px);
+    margin-top: rem(86px);
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(74px);
+      height: rem(74px);
+      border: 2px solid $grey3;
+      background: #fff;
+      border-radius: rem(16px);
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__bottom {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(20px);
+    margin-top: rem(61px);
+    font: 400 rem(16px) $font-rubik;
+    line-height: rem(19.2px);
+    color: $black-green;
+    z-index: 1;
+
+    @media #{media('<',t)} {
+      grid-template-areas:
+        'personal'
+        'company'
+        'dev';
+      gap: rem(12px);
+      margin-top: rem(36px);
+      font-size: rem(12px);
+      line-height: rem(14.4px);
+    }
+
+    @media #{media('<',m)} {
+      margin-top: rem(32px);
+    }
+  }
+
+  &__personal {
+    grid-column: span 2;
+
+    @media #{media('<',t)} {
+      grid-column: unset;
+      grid-area: personal;
+    }
+
+    &:hover {
+      color: $magenta;
+    }
+  }
+
+  &__company {
+    font-size: rem(14px);
+    opacity: 0.7;
+
+    @media #{media('<',t)} {
+      grid-area: company;
+      font-size: rem(12px);
+    }
+  }
+
+  &__dev {
+    @media #{media('<',t)} {
+      grid-area: dev;
+    }
+
+    a:hover {
+      color: $magenta-bold;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+
+    @media #{media('<',t)} {
+      right: unset;
+      left: 0;
+    }
+
+    @media #{media('<',m)} {
+      left: unset;
+      right: 0;
+    }
+  }
+
+  &__warning {
+    margin: 0 auto;
+    padding: rem(50px) rem(30px) rem(45px);
+    text-align: center;
+    font: 400 rem(37px) $font-rubik;
+    line-height: rem(44.4px);
+    color: $black-green;
+    opacity: 0.24;
+    letter-spacing: rem(-0.6px);
+
+    @media #{media('<',t)} {
+      max-width: rem(450px);
+      padding: rem(24px) rem(12px);
+      font: 400 rem(15px) $font-rubik;
+      line-height: rem(18px);
+    }
+  }
 }

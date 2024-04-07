@@ -1,3 +1,47 @@
+-
+  const footerMenu = [
+    { text: 'О компании', link: '#' },
+    { text: 'Новости', link: '#' },
+    { text: 'Контакты', link: '#' },
+    { text: 'Где купить', link: '#' },
+  ]
+
 .footer
-  .inner
-    p  Footer
+  .footer__content
+    .inner.inner--xl
+      .footer__top
+        .footer__image
+          +footer-logo(class='text-t-none')
+          +footer-image
+        nav.footer__menu
+          each menuItem in footerMenu
+            a.footer__menu-item(href=menuItem.link) !{menuItem.text}
+        .footer__info
+          .footer__contacts
+            a(href="tel:88124485465") 8 812 448-54-65
+            a(href="mailto:info@lekker.ru ") info@lekker.ru
+          .footer__social
+            a.footer__social-item(href="#")
+              +vk
+            a.footer__social-item(href="#")
+              +ok
+            a.footer__social-item(href="#")
+              +youtube
+            a.footer__social-item(href="#")
+              +rutube
+        .footer__button
+          +button('Стать партнером', '#', false, 'text-t-none button--pd-l')
+      .footer__bottom
+        .footer__company © 2002-2023 ООО «Леккер»
+        a.footer__personal(href="#") Политика в отношении обработки персональных данных
+        .footer__dev Сделано в
+          =" "
+          a.text-magenta(href="#") CloudMill
+      .footer__decor.text-t-none
+        +footer-decor-desktop
+      .footer__decor.text-t-only
+        +footer-decor-tablet
+      .footer__decor.text-mob-only
+        +footer-decor-mobile
+  .footer__warning
+    .inner.inner--no-max-w ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ

@@ -8,7 +8,6 @@
   justify-content: center;
   align-items: center;
   font: 500 rem(18px) $font-rubik;
-  line-height: rem(0px);
   text-align: center;
   color: #fff;
   transition: all $transition;
@@ -58,8 +57,8 @@
   }
 
   &--icon {
-    transition: background-color $transition, color .1ms ease;
-
+    transition: background-color $transition, color 0.1ms ease;
+    line-height: rem(0px);
     svg {
       width: rem(24px);
       height: rem(24px);
