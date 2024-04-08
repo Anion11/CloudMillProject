@@ -59,6 +59,7 @@
   &--icon {
     transition: background-color $transition, color 0.1ms ease;
     line-height: rem(0px);
+
     svg {
       width: rem(24px);
       height: rem(24px);
@@ -77,13 +78,38 @@
       }
     }
 
+    &-pd0 {
+      width: rem(74px);
+      height: rem(74px);
+      padding: 0;
+
+      @media #{media('<',t)} {
+        width: rem(48px);
+        height: rem(48px);
+      }
+    }
+
     &-reverse {
       flex-direction: row-reverse;
+    }
+
+    &-border {
+      border: 2px solid $grey3;
     }
   }
 
   &--grey {
     background: $grey;
+    color: $black-green;
+
+    &:hover {
+      background: $magenta;
+      color: #fff;
+    }
+  }
+
+  &--white {
+    background: #fff;
     color: $black-green;
 
     &:hover {

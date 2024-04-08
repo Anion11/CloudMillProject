@@ -41,12 +41,15 @@
 
     &-item {
       display: block;
+
       &:not(:first-child) {
         margin-top: rem(24px);
+
         @media #{media('<',t)} {
           margin-top: rem(12px);
         }
       }
+
       &:hover {
         color: $magenta;
       }
@@ -75,15 +78,9 @@
     gap: rem(8px);
     margin-top: rem(86px);
 
-    &-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: rem(74px);
-      height: rem(74px);
-      border: 2px solid $grey3;
-      background: #fff;
-      border-radius: rem(16px);
+    svg {
+      width: unset;
+      height: unset;
     }
   }
 
