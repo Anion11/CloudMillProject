@@ -9,6 +9,7 @@
 
     @media #{media('<',t)} {
       padding: rem(32px) 0 rem(36px);
+      border-radius: rem(24px);
     }
 
     @media #{media('<',m)} {
@@ -22,11 +23,64 @@
     grid-template-columns: repeat(4, 1fr);
     gap: rem(20px);
     z-index: 1;
+
+    @media #{media('<',t)} {
+      grid-template-columns: unset;
+      grid-template-areas: "one one one two three"
+                     "four four four four three";
+      gap: rem(26px) 0;
+    }
+
+    @media #{media('<',m)} {
+      grid-template-columns: unset;
+      grid-template-areas: "one three"
+                     "two three"
+                     "four four";
+      gap: rem(26px) 0;
+    }
   }
 
   &__image {
     display: grid;
     gap: rem(60px);
+
+    @media #{media('<',t)} {
+      grid-area: three;
+      justify-content: end;
+      justify-items: center;
+      align-content: space-between;
+      gap: 0;
+    }
+  }
+
+  &__logo {
+    width: rem(173px);
+  }
+
+  &__picture-wrapper {
+    @media #{media('<',t)} {
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+  }
+
+  &__picture {
+    width: rem(134px);
+
+    @media #{media('<',t)} {
+      width: rem(80px);
+    }
+
+    &-button {
+      display: none;
+
+      @media #{media('<',t)} {
+        grid-row-start: 2;
+        grid-row-end: 3;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
   }
 
   &__menu {
@@ -35,13 +89,12 @@
     color: $black-green;
 
     @media #{media('<',t)} {
+      grid-area: one;
       font-size: rem(24px);
       line-height: rem(21.6px);
     }
 
     &-item {
-      display: block;
-
       &:not(:first-child) {
         margin-top: rem(24px);
 
@@ -50,7 +103,7 @@
         }
       }
 
-      &:hover {
+      a:hover {
         color: $magenta;
       }
     }
@@ -64,8 +117,14 @@
     color: $black-green;
 
     @media #{media('<',t)} {
+      grid-area: two;
+      justify-content: end;
       font-size: rem(16px);
       line-height: rem(14.4px);
+    }
+
+    @media #{media('<',m)} {
+      justify-content: start;
     }
 
     a:hover {
@@ -78,15 +137,66 @@
     gap: rem(8px);
     margin-top: rem(86px);
 
-    svg {
-      width: unset;
-      height: unset;
+    @media #{media('<',t)} {
+      grid-area: four;
+      margin-top: 0;
+    }
+
+    &-button {
+      &--vk {
+        svg {
+          width: rem(25px);
+
+          @media #{media('<',t)} {
+            width: rem(17px);
+          }
+        }
+      }
+
+      &--ok {
+        svg {
+          width: rem(28px);
+
+          @media #{media('<',t)} {
+            width: rem(18px);
+          }
+        }
+      }
+
+      &--youtube {
+        svg {
+          width: rem(30px);
+
+          @media #{media('<',t)} {
+            width: rem(20px);
+          }
+        }
+      }
+
+      &--rutube {
+        svg {
+          width: rem(24px);
+
+          @media #{media('<',t)} {
+            width: rem(16px);
+          }
+        }
+      }
+    }
+
+
+    &--tablet {
+      display: none;
+
+      @media #{media('<',t)} {
+        display: flex;
+      }
     }
   }
 
-  &__button {
+  &__partner {
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: flex-start;
   }
 
@@ -102,6 +212,7 @@
     z-index: 1;
 
     @media #{media('<',t)} {
+      grid-template-columns: unset;
       grid-template-areas:
         'personal'
         'company'
@@ -125,7 +236,7 @@
       grid-area: personal;
     }
 
-    &:hover {
+    a:hover {
       color: $magenta;
     }
   }
@@ -141,8 +252,16 @@
   }
 
   &__dev {
+    text-align: right;
+
     @media #{media('<',t)} {
       grid-area: dev;
+      text-align: left;
+    }
+
+    span {
+      display: inline-block;
+      text-align: left;
     }
 
     a:hover {
@@ -154,16 +273,19 @@
     position: absolute;
     right: 0;
     bottom: 0;
+    width: rem(732px);
     z-index: 0;
 
     @media #{media('<',t)} {
       right: unset;
       left: 0;
+      width: rem(493px);
     }
 
     @media #{media('<',m)} {
       left: unset;
       right: 0;
+      width: rem(375px);
     }
   }
 

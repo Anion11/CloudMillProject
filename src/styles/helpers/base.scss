@@ -129,15 +129,11 @@ blockquote {
       }
     }
 
-    &-t-only {
+    &-t-disp {
       display: none;
 
       @media #{media('<',t)} {
         display: block;
-      }
-
-      @media #{media('<',m)} {
-        display: none;
       }
     }
 
