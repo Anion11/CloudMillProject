@@ -1,3 +1,334 @@
 .footer {
   flex: 0 1;
+
+  &__content {
+    position: relative;
+    padding: rem(80px) 0 rem(50px);
+    border-radius: rem(48px);
+    background-color: $grey2;
+
+    @media #{media('<',t)} {
+      padding: rem(32px) 0 rem(36px);
+      border-radius: rem(24px);
+    }
+
+    @media #{media('<',m)} {
+      padding: rem(32px) 0;
+    }
+  }
+
+  &__top {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(20px);
+    z-index: 1;
+
+    @media #{media('<',t)} {
+      grid-template-columns: unset;
+      grid-template-areas: "menu menu menu contacts image"
+                           "social social social social image";
+      gap: rem(36px) 0;
+    }
+
+    @media #{media('<',m)} {
+      grid-template-columns: unset;
+      grid-template-areas: "menu image"
+                           "contacts image"
+                           "social social";
+      gap: rem(32px) 0;
+    }
+  }
+
+  &__image {
+    display: grid;
+    gap: rem(60px);
+
+    @media #{media('<',t)} {
+      grid-area: image;
+      justify-content: end;
+      justify-items: center;
+      align-content: space-between;
+      gap: 0;
+    }
+
+    @media #{media('<',t)} {
+      gap: rem(26px) 0;
+    }
+
+    &-button {
+      display: none;
+
+      @media #{media('<',t)} {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  &__logo {
+    width: rem(173px);
+  }
+
+  &__picture {
+    width: rem(134px);
+
+    @media #{media('<',t)} {
+      width: rem(80px);
+      height: rem(130px);
+    }
+  }
+
+  &__menu {
+    font: 600 rem(40px) $font-rubik;
+    line-height: rem(36px);
+    letter-spacing: -0.02em;
+    color: $black-green;
+
+    @media #{media('<',t)} {
+      grid-area: menu;
+      font-size: rem(24px);
+      line-height: rem(21.6px);
+    }
+
+    &-item {
+      &:not(:first-child) {
+        margin-top: rem(24px);
+
+        @media #{media('<',t)} {
+          margin-top: rem(12px);
+        }
+      }
+
+      a:hover {
+        color: $magenta;
+      }
+    }
+  }
+
+  &__contacts {
+    display: grid;
+    gap: rem(12px);
+    font: 600 rem(24px) $font;
+    line-height: rem(21.6px);
+    color: $black-green;
+
+    @media #{media('<',t)} {
+      grid-area: contacts;
+      justify-content: end;
+      font-size: rem(16px);
+      line-height: rem(14.4px);
+      letter-spacing: -0.02em;
+    }
+
+    @media #{media('<',m)} {
+      justify-content: start;
+    }
+
+    a:hover {
+      color: $magenta;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: rem(8px);
+    margin-top: rem(86px);
+
+    @media #{media('<',t)} {
+      grid-area: social;
+      margin-top: 0;
+    }
+
+    &-button {
+      &--vk {
+        svg {
+          width: rem(25px);
+
+          @media #{media('<',t)} {
+            width: rem(17px);
+          }
+        }
+      }
+
+      &--ok {
+        svg {
+          width: rem(28px);
+
+          @media #{media('<',t)} {
+            width: rem(18px);
+          }
+        }
+      }
+
+      &--youtube {
+        svg {
+          width: rem(30px);
+
+          @media #{media('<',t)} {
+            width: rem(20px);
+          }
+        }
+      }
+
+      &--rutube {
+        svg {
+          width: rem(24px);
+
+          @media #{media('<',t)} {
+            width: rem(16px);
+          }
+        }
+      }
+    }
+
+    &--tablet {
+      display: none;
+
+      @media #{media('<',t)} {
+        display: flex;
+      }
+    }
+  }
+
+  &__partner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
+
+  &__bottom {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: rem(20px);
+    margin-top: rem(61px);
+    font: 400 rem(16px) $font-rubik;
+    line-height: rem(19.2px);
+    color: $black-green;
+    z-index: 1;
+
+    @media #{media('<',t)} {
+      grid-template-columns: unset;
+      grid-template-areas:
+        'personal'
+        'company'
+        'dev';
+      gap: rem(12px);
+      margin-top: rem(36px);
+      font-size: rem(12px);
+      line-height: rem(14.4px);
+    }
+
+    @media #{media('<',m)} {
+      margin-top: rem(32px);
+    }
+  }
+
+  &__personal {
+    grid-column: span 2;
+
+    @media #{media('<',t)} {
+      grid-area: personal;
+      grid-column: unset;
+    }
+
+    a:hover {
+      color: $magenta;
+    }
+  }
+
+  &__company {
+    font-size: rem(14px);
+    opacity: 0.7;
+
+    @media #{media('<',t)} {
+      grid-area: company;
+      font-size: rem(12px);
+    }
+  }
+
+  &__dev {
+    display: flex;
+    justify-content: flex-end;
+
+    @media #{media('<',t)} {
+      grid-area: dev;
+      text-align: left;
+    }
+
+    span {
+      display: inline-block;
+    }
+
+    a:hover {
+      color: $magenta-bold;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    display: flex;
+    right: 0;
+    bottom: 0;
+    width: rem(732px);
+    z-index: 0;
+
+    @media #{media('<',t)} {
+      display: none;
+      right: unset;
+      left: 0;
+      width: rem(493px);
+    }
+
+    @media #{media('<',m)} {
+      left: unset;
+      right: 0;
+      width: rem(375px);
+    }
+
+    &--tablet {
+      display: none;
+
+      @media #{media('<',t)} {
+        display: flex;
+      }
+
+      @media #{media('<',m)} {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media #{media('<',m)} {
+        display: flex;
+      }
+    }
+  }
+
+  &__warning {
+    margin: 0 auto;
+    padding: rem(50px) 0 rem(45px);
+    text-align: center;
+
+    @media #{media('<',t)} {
+      max-width: rem(450px);
+      padding: rem(24px) 0;
+    }
+
+    &-text {
+      font: 400 rem(37px) $font-rubik;
+      line-height: rem(44.4px);
+      letter-spacing: -0.04em;
+      opacity: 0.24;
+      color: $black-green;
+
+      @media #{media('<',t)} {
+        font: 400 rem(15px) $font-rubik;
+        line-height: rem(18px);
+      }
+    }
+  }
 }

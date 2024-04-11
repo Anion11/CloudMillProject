@@ -95,20 +95,26 @@ blockquote {
   font-family: $font;
 
   .inner {
-    max-width: 1340px;
+    max-width: rem(1340px);
     margin: 0 auto;
-    padding: 0 25px;
+    padding: 0 rem(25px);
 
-    @media #{media('<',l)} {
+    @media #{media('<',t)} {
+      padding: 0 rem(12px);
       max-width: 100%;
-    }
-
-    @media #{media('<',m)} {
-      padding: 0 10px;
     }
 
     &--no-max-w {
       max-width: unset;
+    }
+
+    &--xl {
+      max-width: rem(1680px);
+      margin: 0 auto;
+
+      @media #{media('<',t)} {
+        max-width: unset;
+      }
     }
   }
 
@@ -123,7 +129,7 @@ blockquote {
       }
     }
 
-    &-t-only {
+    &-t-disp {
       display: none;
 
       @media #{media('<',t)} {
@@ -155,6 +161,10 @@ blockquote {
 
     &-bold {
       font-weight: 700;
+    }
+
+    &-magenta {
+      color: $magenta;
     }
   }
 }
