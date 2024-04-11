@@ -16,7 +16,7 @@
           .footer__picture-wrapper
             .footer__picture
               +footer-image
-          .footer__picture-button
+          .footer__image-button
             +button('Стать партнером', '#', false, 'button--pd-l')
         nav.footer__menu
           each menuItem in footerMenu
@@ -64,11 +64,12 @@
           span Сделано в
             =" "
             a.text-magenta(href="#") CloudMill
-      .footer__decor.text-t-none
+      .footer__decor.footer__decor--desktop
         +footer-decor-desktop
-      .footer__decor.text-t-disp
+      .footer__decor.footer__decor--tablet
         +footer-decor-tablet
-      .footer__decor.text-mob-only
+      .footer__decor.footer__decor--mobile
         +footer-decor-mobile
   .footer__warning
-    .inner.inner--no-max-w ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ
+    .inner.inner--xl
+      .footer__warning-text ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ

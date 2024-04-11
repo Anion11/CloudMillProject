@@ -8,12 +8,8 @@ export const footer = () => {
 
     const calcLeftButton = () => {
       setTimeout(() => {
-        if (!mediaQuery.matches) {
-          console.log(footerButton.getBoundingClientRect().width)
-          footerText.style.width = footerButton.getBoundingClientRect().width + 'px'
-        } else {
-          footerText.style.width = 'auto'
-        }
+        if (!mediaQuery.matches) footerText.style.width = footerButton.getBoundingClientRect().width + 'px'
+        else footerText.style.width = 'auto'
       }, 500)
     }
 

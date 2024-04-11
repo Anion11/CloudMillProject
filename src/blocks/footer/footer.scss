@@ -4,8 +4,8 @@
   &__content {
     position: relative;
     padding: rem(80px) 0 rem(50px);
-    background-color: $grey2;
     border-radius: rem(48px);
+    background-color: $grey2;
 
     @media #{media('<',t)} {
       padding: rem(32px) 0 rem(36px);
@@ -26,17 +26,17 @@
 
     @media #{media('<',t)} {
       grid-template-columns: unset;
-      grid-template-areas: "one one one two three"
-                     "four four four four three";
-      gap: rem(26px) 0;
+      grid-template-areas: "menu menu menu contacts image"
+                           "social social social social image";
+      gap: rem(36px) 0;
     }
 
     @media #{media('<',m)} {
       grid-template-columns: unset;
-      grid-template-areas: "one three"
-                     "two three"
-                     "four four";
-      gap: rem(26px) 0;
+      grid-template-areas: "menu image"
+                           "contacts image"
+                           "social social";
+      gap: rem(32px) 0;
     }
   }
 
@@ -45,11 +45,24 @@
     gap: rem(60px);
 
     @media #{media('<',t)} {
-      grid-area: three;
+      grid-area: image;
       justify-content: end;
       justify-items: center;
       align-content: space-between;
       gap: 0;
+    }
+
+    @media #{media('<',t)} {
+      gap: rem(26px) 0;
+    }
+
+    &-button {
+      display: none;
+
+      @media #{media('<',t)} {
+        display: flex;
+        justify-content: flex-end;
+      }
     }
   }
 
@@ -57,39 +70,23 @@
     width: rem(173px);
   }
 
-  &__picture-wrapper {
-    @media #{media('<',t)} {
-      grid-row-start: 1;
-      grid-row-end: 2;
-    }
-  }
-
   &__picture {
     width: rem(134px);
 
     @media #{media('<',t)} {
       width: rem(80px);
-    }
-
-    &-button {
-      display: none;
-
-      @media #{media('<',t)} {
-        grid-row-start: 2;
-        grid-row-end: 3;
-        display: flex;
-        justify-content: flex-end;
-      }
+      height: rem(130px);
     }
   }
 
   &__menu {
     font: 600 rem(40px) $font-rubik;
     line-height: rem(36px);
+    letter-spacing: -0.02em;
     color: $black-green;
 
     @media #{media('<',t)} {
-      grid-area: one;
+      grid-area: menu;
       font-size: rem(24px);
       line-height: rem(21.6px);
     }
@@ -117,10 +114,11 @@
     color: $black-green;
 
     @media #{media('<',t)} {
-      grid-area: two;
+      grid-area: contacts;
       justify-content: end;
       font-size: rem(16px);
       line-height: rem(14.4px);
+      letter-spacing: -0.02em;
     }
 
     @media #{media('<',m)} {
@@ -138,7 +136,7 @@
     margin-top: rem(86px);
 
     @media #{media('<',t)} {
-      grid-area: four;
+      grid-area: social;
       margin-top: 0;
     }
 
@@ -183,7 +181,6 @@
         }
       }
     }
-
 
     &--tablet {
       display: none;
@@ -232,8 +229,8 @@
     grid-column: span 2;
 
     @media #{media('<',t)} {
-      grid-column: unset;
       grid-area: personal;
+      grid-column: unset;
     }
 
     a:hover {
@@ -252,7 +249,8 @@
   }
 
   &__dev {
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
 
     @media #{media('<',t)} {
       grid-area: dev;
@@ -261,7 +259,6 @@
 
     span {
       display: inline-block;
-      text-align: left;
     }
 
     a:hover {
@@ -271,12 +268,14 @@
 
   &__decor {
     position: absolute;
+    display: flex;
     right: 0;
     bottom: 0;
     width: rem(732px);
     z-index: 0;
 
     @media #{media('<',t)} {
+      display: none;
       right: unset;
       left: 0;
       width: rem(493px);
@@ -287,23 +286,49 @@
       right: 0;
       width: rem(375px);
     }
+
+    &--tablet {
+      display: none;
+
+      @media #{media('<',t)} {
+        display: flex;
+      }
+
+      @media #{media('<',m)} {
+        display: none;
+      }
+    }
+
+    &--mobile {
+      display: none;
+
+      @media #{media('<',m)} {
+        display: flex;
+      }
+    }
   }
 
   &__warning {
     margin: 0 auto;
-    padding: rem(50px) rem(30px) rem(45px);
+    padding: rem(50px) 0 rem(45px);
     text-align: center;
-    font: 400 rem(37px) $font-rubik;
-    line-height: rem(44.4px);
-    color: $black-green;
-    opacity: 0.24;
-    letter-spacing: rem(-0.6px);
 
     @media #{media('<',t)} {
       max-width: rem(450px);
-      padding: rem(24px) rem(12px);
-      font: 400 rem(15px) $font-rubik;
-      line-height: rem(18px);
+      padding: rem(24px) 0;
+    }
+
+    &-text {
+      font: 400 rem(37px) $font-rubik;
+      line-height: rem(44.4px);
+      letter-spacing: -0.04em;
+      opacity: 0.24;
+      color: $black-green;
+
+      @media #{media('<',t)} {
+        font: 400 rem(15px) $font-rubik;
+        line-height: rem(18px);
+      }
     }
   }
 }
