@@ -1,0 +1,39 @@
+.section {
+  margin-top: rem(150px);
+
+  @media #{media('<',t)} {
+    margin-top: rem(48px);
+  }
+
+  &_mt-xxxs {
+    margin-top: rem(24px);
+
+    @media #{media('<',t)} {
+      margin-top: rem(10px);
+    }
+
+    @media #{media('<',m)} {
+      margin-top: rem(48px);
+    }
+
+    &-desktop {
+      @media #{media('<',t)} {
+        margin-top: rem(48px);
+      }
+    }
+  }
+
+  &_mt0 {
+    margin-top: 0;
+  }
+
+  &-head {
+    &:not(:last-child) {
+      margin-bottom: rem(48px);
+
+      @media #{media('<',t)} {
+        margin-bottom: rem(24px);
+      }
+    }
+  }
+}

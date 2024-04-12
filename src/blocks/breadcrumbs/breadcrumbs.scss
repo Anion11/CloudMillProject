@@ -1,9 +1,11 @@
 .breadcrumbs {
   display: flex;
   gap: rem(30px);
+  margin-bottom: rem(24px);
 
   @media #{media('<',t)} {
     gap: rem(16px);
+    margin-bottom: rem(12px);
   }
 
   &__item {
