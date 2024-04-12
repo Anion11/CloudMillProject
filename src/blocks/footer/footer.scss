@@ -254,7 +254,7 @@
 
     @media #{media('<',t)} {
       grid-area: dev;
-      text-align: left;
+      justify-content: flex-start;
     }
 
     span {

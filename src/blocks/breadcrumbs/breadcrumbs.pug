@@ -1,0 +1,25 @@
+mixin breadcrumbs(data, mods)
+  -
+    const baseName = 'breadcrumbs'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .breadcrumbs(class=allMods)&attributes(attributes)
+    each item, index in data
+      if index === data.length - 1
+        .breadcrumbs__item
+          .breadcrumbs__text !{item.text}
+          .breadcrumbs__image
+            +breadcrumbsPrev
+      else
+        a(href=item.link).breadcrumbs__item
+          .breadcrumbs__text !{item.text}
+          .breadcrumbs__image
+            +breadcrumbsPrev
+    block

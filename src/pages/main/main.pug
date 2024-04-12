@@ -5,6 +5,13 @@ block variables
     const pageName = 'main'
     const pageTitle = 'Main'
 
+  -
+    const breadCrumbsData = [
+      { text: 'Главная', link: '/' },
+      { text: 'Контакты' },
+    ]
+
 block content
-  main
+  main.main
     .inner.inner--no-max-w
+      +breadcrumbs(breadCrumbsData)

@@ -120,6 +120,14 @@ blockquote {
 
   main {
     flex: 1 0;
+
+    &.main {
+      padding: rem(24px) 0 rem(150px);
+
+      @media #{media('<',t)} {
+        padding: rem(12px) 0 rem(50px);
+      }
+    }
   }
 
   .text {
