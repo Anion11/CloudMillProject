@@ -22,7 +22,7 @@ $header-top: 24px;
     z-index: 100;
   }
 
-  &-hidden {
+  &_hidden {
     /* stylelint-disable-next-line selector-class-pattern */
     .header__wrapper {
       transform: translateY(-150%);

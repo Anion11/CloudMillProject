@@ -104,11 +104,11 @@ blockquote {
       max-width: 100%;
     }
 
-    &--no-max-w {
+    &_no-max-w {
       max-width: unset;
     }
 
-    &--xl {
+    &_xl {
       max-width: rem(1680px);
       margin: 0 auto;
 
@@ -131,13 +131,13 @@ blockquote {
   }
 
   .text {
-    &-t-none {
+    &_t-none {
       @media #{media('<',t)} {
         display: none;
       }
     }
 
-    &-t-disp {
+    &_t-disp {
       display: none;
 
       @media #{media('<',t)} {
@@ -145,13 +145,13 @@ blockquote {
       }
     }
 
-    &-mob-none {
+    &_mob-none {
       @media #{media('<',m)} {
         display: none;
       }
     }
 
-    &-mob-only {
+    &_mob-only {
       display: none;
 
       @media #{media('<',m)} {
@@ -159,19 +159,19 @@ blockquote {
       }
     }
 
-    &-light {
+    &_light {
       font-weight: 300;
     }
 
-    &-normal {
+    &_normal {
       font-weight: 400;
     }
 
-    &-bold {
+    &_bold {
       font-weight: 700;
     }
 
-    &-magenta {
+    &_magenta {
       color: $magenta;
     }
   }

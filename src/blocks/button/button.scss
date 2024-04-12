@@ -34,7 +34,7 @@
     opacity: 0.3;
   }
 
-  &--empty {
+  &_empty {
     border: 2px solid $magenta;
     background: unset;
     color: $magenta;
@@ -48,7 +48,7 @@
     }
   }
 
-  &--pd-l {
+  &_pd-l {
     padding: rem(26.5px) rem(32px);
 
     @media #{media('<',t)} {
@@ -56,7 +56,7 @@
     }
   }
 
-  &--icon {
+  &_icon {
     transition: background-color $transition, color 0.1ms ease;
     line-height: rem(0px);
 
@@ -98,7 +98,7 @@
     }
   }
 
-  &--grey {
+  &_grey {
     background: $grey;
     color: $black-green;
 
@@ -108,7 +108,7 @@
     }
   }
 
-  &--white {
+  &_white {
     background: #fff;
     color: $black-green;
 

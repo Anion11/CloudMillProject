@@ -8,16 +8,16 @@
 
 .footer
   .footer__content
-    .inner.inner--xl
+    .inner.inner_xl
       .footer__top
         .footer__image
-          .footer__logo.text-t-none
+          .footer__logo.text_t-none
             +footer-logo
           .footer__picture-wrapper
             .footer__picture
               +footer-image
           .footer__image-button
-            +button('Стать партнером', '#', false, 'button--pd-l')
+            +button('Стать партнером', '#', false, '_pd-l')
         nav.footer__menu
           each menuItem in footerMenu
             .footer__menu-item
@@ -28,34 +28,34 @@
               a(href="tel:88124485465") 8 812 448-54-65
             .footer__contacts-item
               a(href="mailto:info@lekker.ru ") info@lekker.ru
-          .footer__social.text-t-none
-            .footer__social-button.footer__social-button--vk
-              +button('', '#', false, 'button--icon button--white button--icon-pd0 button--icon-border')
+          .footer__social.text_t-none
+            .footer__social-button.footer__social-button_vk
+              +button('', '#', false, '_icon, _white, _icon-pd0, _icon-border')
                 +vk
-            .footer__social-button.footer__social-button--ok
-              +button('', '#', false, 'button--icon button--white button--icon-pd0 button--icon-border')
+            .footer__social-button.footer__social-button_ok
+              +button('', '#', false, '_icon, _white, _icon-pd0, _icon-border')
                 +ok
-            .footer__social-button.footer__social-button--youtube
-              +button('', '#', false, 'button--icon button--white button--icon-pd0 button--icon-border')
+            .footer__social-button.footer__social-button_youtube
+              +button('', '#', false, '_icon, _white, _icon-pd0, _icon-border')
                 +youtube
-            .footer__social-button.footer__social-button--rutube
-              +button('', '#', false, 'button--icon button--white button--icon-pd0 button--icon-border')
+            .footer__social-button.footer__social-button_rutube
+              +button('', '#', false, '_icon, _white, _icon-pd0, _icon-border')
                 +rutube
-        .footer__social.footer__social--tablet
-          .footer__social-button.footer__social-button--vk
-            +button('', '#', false, 'button--icon button--white button--icon-pd0 button--icon-border')
+        .footer__social.footer__social_tablet
+          .footer__social-button.footer__social-button_vk
+            +button('', '#', false, '_icon, _white, _icon-pd0, _icon-border')
               +vk
-          .footer__social-button.footer__social-button--ok
-            +button('', '#', false, 'button--icon button--white button--icon-pd0 button--icon-border')
+          .footer__social-button.footer__social-button_ok
+            +button('', '#', false, '_icon, _white, _icon-pd0, _icon-border')
               +ok
-          .footer__social-button.footer__social-button--youtube
-            +button('', '#', false, 'button--icon button--white button--icon-pd0 button--icon-border')
+          .footer__social-button.footer__social-button_youtube
+            +button('', '#', false, '_icon, _white, _icon-pd0, _icon-border')
               +youtube
-          .footer__social-button.footer__social-button--rutube
-            +button('', '#', false, 'button--icon button--white button--icon-pd0 button--icon-border')
+          .footer__social-button.footer__social-button_rutube
+            +button('', '#', false, '_icon, _white, _icon-pd0, _icon-border')
               +rutube
-        .footer__partner.text-t-none
-          +button('Стать партнером', '#', false, 'button--pd-l')
+        .footer__partner.text_t-none
+          +button('Стать партнером', '#', false, '_pd-l')
       .footer__bottom
         .footer__company © 2002-2023 ООО «Леккер»
         .footer__personal
@@ -63,13 +63,13 @@
         .footer__dev
           span Сделано в
             =" "
-            a.text-magenta(href="#") CloudMill
-      .footer__decor.footer__decor--desktop
+            a.text_magenta(href="#") CloudMill
+      .footer__decor.footer__decor_desktop
         +footer-decor-desktop
-      .footer__decor.footer__decor--tablet
+      .footer__decor.footer__decor_tablet
         +footer-decor-tablet
-      .footer__decor.footer__decor--mobile
+      .footer__decor.footer__decor_mobile
         +footer-decor-mobile
   .footer__warning
-    .inner.inner--xl
+    .inner.inner_xl
       .footer__warning-text ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМО ПРОКОНСУЛЬТИРОВАТЬСЯ СО СПЕЦИАЛИСТОМ

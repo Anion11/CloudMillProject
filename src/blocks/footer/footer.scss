@@ -141,7 +141,7 @@
     }
 
     &-button {
-      &--vk {
+      &_vk {
         svg {
           width: rem(25px);
 
@@ -151,7 +151,7 @@
         }
       }
 
-      &--ok {
+      &_ok {
         svg {
           width: rem(28px);
 
@@ -161,7 +161,7 @@
         }
       }
 
-      &--youtube {
+      &_youtube {
         svg {
           width: rem(30px);
 
@@ -171,7 +171,7 @@
         }
       }
 
-      &--rutube {
+      &_rutube {
         svg {
           width: rem(24px);
 
@@ -182,7 +182,7 @@
       }
     }
 
-    &--tablet {
+    &_tablet {
       display: none;
 
       @media #{media('<',t)} {
@@ -287,7 +287,7 @@
       width: rem(375px);
     }
 
-    &--tablet {
+    &_tablet {
       display: none;
 
       @media #{media('<',t)} {
@@ -299,7 +299,7 @@
       }
     }
 
-    &--mobile {
+    &_mobile {
       display: none;
 
       @media #{media('<',m)} {
