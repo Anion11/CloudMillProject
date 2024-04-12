@@ -33,7 +33,7 @@ $header-top: 24px;
     display: flex;
     align-items: center;
     padding: rem(6px) rem(6px) rem(6px) rem(30px);
-    border: 2px solid $grey2;
+    border: 2px solid $grey4;
     border-radius: rem(20px);
     box-shadow: 0 rem(14px) rem(24px) 0 rgb(0 0 0 / 4%);
     background: rgb(255 255 255 / 70%);
@@ -50,6 +50,7 @@ $header-top: 24px;
       padding: rem(6px);
       gap: rem(12px);
       border-radius: rem(12px);
+      border: 1px solid $grey4;
     }
   }
 

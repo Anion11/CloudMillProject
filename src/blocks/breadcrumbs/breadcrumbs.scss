@@ -1,0 +1,45 @@
+.breadcrumbs {
+  display: flex;
+  gap: rem(30px);
+
+  @media #{media('<',t)} {
+    gap: rem(16px);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+    color: $black-green;
+    transition: color $transition;
+
+    &:hover {
+      color: $cold-green;
+    }
+
+
+    &:last-child {
+      color: $cold-green;
+
+      svg {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+
+  &__text {
+    font: 600 rem(16px) $font;
+    line-height: rem(14.4px);
+    text-transform: uppercase;
+
+    @media #{media('<',t)} {
+      font-size: rem(10px);
+      line-height: rem(9px);
+    }
+  }
+
+  &__image {
+    width: rem(16px);
+    height: rem(16px);
+  }
+}
