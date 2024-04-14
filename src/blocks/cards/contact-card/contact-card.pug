@@ -1,0 +1,48 @@
+mixin contact-card(data, mods)
+  -
+    const baseName = 'contact-card'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .contact-card(class=allMods)&attributes(attributes)
+    .contact-card__head
+      if data.title
+        .contact-card__title
+          +ui-h5(data.title)
+      if data.descr
+        +ui-p1(data.descr)
+    .contact-card__foot
+      if data.tel
+        -let currentTel = data.tel.replace(/[- )(]/g,'');
+        a.contact-card__foot-item(href='tel:' + currentTel)
+          .contact-card__foot-svg
+            +contact-tel
+          +ui-p1(data.tel)
+      if data.mail
+        a.contact-card__foot-item(href='mailto:' + data.mail)
+          .contact-card__foot-svg
+            +contact-mail
+          +ui-p1(data.mail)
+    .contact-card__decor
+      block
+
+mixin contact-cards(mods)
+  -
+    const baseName = 'contact-cards'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  .contact-cards(class=allMods)&attributes(attributes)
+    block
