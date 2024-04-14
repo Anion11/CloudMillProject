@@ -1,0 +1,142 @@
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: rem(24px);
+
+  @media #{media('<',t)} {
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(12px);
+  }
+
+  @media #{media('<',m)} {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contact-card {
+  position: relative;
+  display: grid;
+  align-content: space-between;
+  gap: rem(100px);
+  padding: rem(32px);
+  border-radius: rem(24px);
+
+  @media #{media('<',t)} {
+    gap: rem(24px);
+    padding: rem(24px);
+  }
+
+  &__head {
+    display: grid;
+    gap: rem(12px);
+    z-index: 1;
+
+    @media #{media('<',t)} {
+      gap: rem(8px);
+    }
+  }
+
+  &__foot {
+    display: grid;
+    gap: rem(13px);
+    z-index: 1;
+
+    @media #{media('<',t)} {
+      gap: rem(8px);
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      gap: rem(16px);
+    }
+
+    &-svg {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: rem(32px);
+      height: rem(32px);
+      border-radius: rem(8px);
+      background: #ffffff;
+
+      svg {
+        width: rem(20px);
+        height: rem(20px);
+      }
+    }
+  }
+
+  &__decor {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    height: 100%;
+    right: 0;
+    z-index: 0;
+  }
+
+  &_secretary {
+    background: $light-green;
+
+    .contact-card__foot svg {
+      color: $cold-green;
+    }
+
+    .contact-card__decor {
+      align-items: flex-end;
+      svg {
+        width: rem(347px);
+
+        @media #{media('<',t)} {
+          width: rem(195px);
+          height: rem(179px);
+        }
+      }
+    }
+  }
+
+  &_sale {
+    background: $pink-light;
+
+    .contact-card__foot svg {
+      color: $magenta;
+    }
+
+    .contact-card__decor {
+      svg {
+        width: rem(200px);
+        margin-bottom: rem(20px);
+
+        @media #{media('<',t)} {
+          width: rem(110px);
+        }
+
+        @media #{media('<',m)} {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  &_advertising {
+    background: $yellow-light;
+
+    .contact-card__foot svg {
+      color: $canary;
+    }
+
+    .contact-card__decor {
+      svg {
+        width: rem(245px);
+        margin-bottom: rem(20px);
+
+        @media #{media('<',t)} {
+          width: rem(125px);
+          margin-bottom: rem(-10px);
+        }
+      }
+    }
+  }
+}

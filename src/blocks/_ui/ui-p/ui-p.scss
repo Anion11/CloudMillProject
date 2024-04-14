@@ -1,0 +1,10 @@
+.ui-p1 {
+  font: 400 rem(24px) $font-rubik;
+  line-height: rem(28.44px);
+  color: $black-green;
+
+  @media #{media('<',t)} {
+    font-size: rem(16px);
+    line-height: rem(18.96px);
+  }
+}
