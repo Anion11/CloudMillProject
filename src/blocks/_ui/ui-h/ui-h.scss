@@ -2,7 +2,6 @@
   font: 600 rem(120px) $font;
   line-height: rem(108px);
   letter-spacing: -0.02em;
-  color: $black-green;
 
   @media #{media('<',t)} {
     font-size: rem(48px);
@@ -14,7 +13,6 @@
   font: 600 rem(32px) $font;
   line-height: rem(32px);
   letter-spacing: -0.02em;
-  color: $black-green;
 
   @media #{media('<',t)} {
     font-size: rem(20px);

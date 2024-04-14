@@ -38,6 +38,7 @@
 
   &__foot {
     display: grid;
+    align-items: start;
     gap: rem(13px);
     z-index: 1;
 
@@ -46,9 +47,14 @@
     }
 
     &-item {
-      display: flex;
+      display: inline-flex;
       align-items: center;
+      max-width: fit-content;
       gap: rem(16px);
+
+      &:hover {
+        color: $cold-green;
+      }
     }
 
     &-svg {
