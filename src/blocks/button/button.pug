@@ -1,4 +1,15 @@
-mixin button(text, href, disabled, allMods)
+mixin button(text, href, disabled, mods)
+  -
+    const baseName = 'button'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
   if href
     a.button(class=allMods data-btn href=href, disabled=disabled)&attributes(attributes)=text
       block

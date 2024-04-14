@@ -1,9 +1,11 @@
 .breadcrumbs {
   display: flex;
   gap: rem(30px);
+  margin-bottom: rem(24px);
 
   @media #{media('<',t)} {
     gap: rem(16px);
+    margin-bottom: rem(12px);
   }
 
   &__item {
@@ -11,12 +13,10 @@
     align-items: center;
     gap: rem(8px);
     color: $black-green;
-    transition: color $transition;
 
     &:hover {
       color: $cold-green;
     }
-
 
     &:last-child {
       color: $cold-green;
@@ -31,6 +31,7 @@
     font: 600 rem(16px) $font;
     line-height: rem(14.4px);
     text-transform: uppercase;
+    transition: color $transition;
 
     @media #{media('<',t)} {
       font-size: rem(10px);
@@ -41,5 +42,9 @@
   &__image {
     width: rem(16px);
     height: rem(16px);
+
+    svg path {
+      transition: unset;
+    }
   }
 }

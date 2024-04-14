@@ -8,7 +8,7 @@
 
 header.header
   .header__wrapper
-    .inner.inner--no-max-w
+    .inner.inner_no-max-w
       .header__content
         .header__burger
           span
@@ -17,14 +17,14 @@ header.header
         a(href="/").header__logo
           +header-logo
         .header__btns
-          +button('Продукция', '#', false, 'text-mob-none button--icon button--icon-reverse')
+          +button('Продукция', '#', false, '_icon, _icon-reverse').text_mob-none
             +more
-          +button('', '#', false, 'button--icon button--grey button--icon-pd-l')
+          +button('', '#', false, '_icon, _grey, _icon-pd-l')
             +search
-          +button('', 'tel:88124485465', false, 'text-t-disp text-mob-none button--icon button--grey button--icon-pd-l')
+          +button('', 'tel:88124485465', false, '_icon, _grey, _icon-pd-l').text_t-disp.text_mob-none
             +tel
-        nav.header__menu.text-t-none
+        nav.header__menu.text_t-none
           each menuItem in headerMenu
             a.header__menu-item(href=menuItem.link) !{menuItem.text}
-        a.header__contact.text-t-none(href='tel:88124485465') 8 812 448-54-65
-        +button('Стать партнером', '#', false, 'text-t-none button--grey button--pd-l')
+        a.header__contact.text_t-none(href='tel:88124485465') 8 812 448-54-65
+        +button('Стать партнером', '#', false, '_grey, _pd-l').text_t-none

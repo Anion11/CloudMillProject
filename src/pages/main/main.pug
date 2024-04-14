@@ -13,5 +13,22 @@ block variables
 
 block content
   main.main
-    .inner.inner--no-max-w
+    .inner.inner_no-max-w
       +breadcrumbs(breadCrumbsData)
+      +section('_mt0')
+        +section-head
+          p cards-head
+        p cards
+      +section('_mt-xxxs')
+        +section-head
+          p socials-head
+        p socials
+      +section('_mt-xxxs, _mt-xxxs-desktop')
+        +section-head
+          p map-head
+        p map
+      +section
+        +section-head
+          p form-head
+        p form
+
