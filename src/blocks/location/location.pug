@@ -10,7 +10,25 @@ mixin location(data, mods)
       allMods = allMods.trim()
     }
 
+    let allCardMods;
+
   .location(class=allMods)&attributes(attributes)
-    .location__card
-    .location__card
+    .location__cards
+      each card in data.cards
+        if card.mods
+          -
+            allCardMods = ''
+            let cardMods = card.mods.split(',')
+            for (const element of cardMods) {
+              allCardMods += element.trim()[0] === '_' ? ' ' + 'location__card' + element.trim() : ' ' + element.trim() + '__' + baseName
+            }
+            allCardMods = allCardMods.trim()
+        .location__card(class=allCardMods)
+          .location__card-title
+            +ui-h5(card.title)
+          .location__card-adress
+            +ui-p3(card.adress)
+          .location__card-hours
+            +ui-p3(card.workingHours)
+    +map(data.mapMods ? data.mapMods : '')
     block

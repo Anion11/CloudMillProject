@@ -7,3 +7,13 @@
     line-height: rem(18.96px);
   }
 }
+
+.ui-p3 {
+  font: 400 rem(18px) $font-rubik;
+  line-height: rem(28.8px);
+
+  @media #{media('<',t)} {
+    font-size: rem(12px);
+    line-height: rem(15.6px);
+  }
+}

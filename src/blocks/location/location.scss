@@ -1,3 +1,65 @@
 .location {
-  position: relative;
+  display: grid;
+  grid-template-columns: rem(450px) 1fr;
+  gap: rem(24px);
+
+  @media #{media('<',t)} {
+    grid-template-columns: rem(180px) 1fr;
+    gap: rem(12px);
+  }
+
+  @media #{media('<',m)} {
+    grid-template-columns: 1fr;
+  }
+
+  &__cards {
+    display: grid;
+    gap: rem(24px);
+
+    @media #{media('<',t)} {
+      gap: rem(12px);
+    }
+
+    @media #{media('<',m)} {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    padding: rem(32px);
+    border-radius: rem(24px);
+    color: #fff;
+    cursor: pointer;
+
+    @media #{media('<',t)} {
+      padding: rem(12px) rem(20px) rem(12px) rem(12px);
+      border-radius: rem(12px);
+    }
+
+    &-title {
+      margin-bottom: rem(20px);
+
+      @media #{media('<',t)} {
+        margin-bottom: rem(12px);
+      }
+    }
+
+    &-hours {
+      margin-top: auto;
+
+      @media #{media('<',t)} {
+        margin-top: rem(24px);
+      }
+    }
+
+    &_blue {
+      background: $blue;
+    }
+
+    &_cold-green {
+      background: $cold-green;
+    }
+  }
 }

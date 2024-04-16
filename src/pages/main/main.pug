@@ -26,6 +26,14 @@ block variables
       title: 'Отдел рекламы', mail: 'reklama@lekker.ru', link: '#'
     }
 
+  -
+    const locationData = {
+      cards: [
+        { title: 'Офис', adress: '194044, Санкт-петербург, Беловодский переулок, 6', workingHours: 'пн-пт: 9–17:30', mods: '_cold-green' },
+        { title: 'Производство', adress: '194044, Санкт-Петербург, пер. Зеленков, 6, лит. А, корп. 1, пом. 11', workingHours: 'пн-пт: 9–17:30', mods: '_blue' }
+      ]
+    }
+
 block content
   main.main
     .inner.inner_no-max-w
@@ -45,7 +53,7 @@ block content
           p socials-head
         p socials
       +section('_mt-xxxs, _mt-xxxs-desktop')
-        +location
+        +location(locationData)
       +section
         +section-head
           p form-head
