@@ -1,6 +1,6 @@
-mixin map(mods)
+mixin location(data, mods)
   -
-    const baseName = 'map'
+    const baseName = 'location'
     let allMods = ''
     if (typeof mods !== 'undefined' && mods) {
       const modsList = mods.split(',')
@@ -10,5 +10,7 @@ mixin map(mods)
       allMods = allMods.trim()
     }
 
-  .map(class=allMods)&attributes(attributes)#map
+  .location(class=allMods)&attributes(attributes)
+    .location__card
+    .location__card
     block
