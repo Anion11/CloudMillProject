@@ -1,0 +1,35 @@
+mixin location(data, mods)
+  -
+    const baseName = 'location'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+    let allCardMods;
+
+  .location(class=allMods)&attributes(attributes)
+    .location__cards
+      each card in data.cards
+        if card.mods
+          -
+            allCardMods = ''
+            let cardMods = card.mods.split(',')
+            for (const element of cardMods) {
+              allCardMods += element.trim()[0] === '_' ? ' ' + 'location__card' + element.trim() : ' ' + element.trim() + '__' + baseName
+            }
+            allCardMods = allCardMods.trim()
+        .location__card(class=allCardMods)
+          .location__card-title
+            +ui-h5(card.title)
+          .location__card-adress
+            +ui-p3(card.adress)
+          .location__card-hours
+            +ui-p3(card.workingHours)
+    .location__map
+      +map(data.mapMods ? data.mapMods : '')
+    block

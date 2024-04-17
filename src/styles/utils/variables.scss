@@ -3,9 +3,6 @@
 $font: 'TT Rounds Neue', 'Arial', sans-serif;
 $font-rubik: 'Rubik', 'Arial', sans-serif;
 $fs: 16px;
-$black: #181d1d;
-$black-icon: #364a46;
-$bg: #fcfcff;
 $breakpoints: (
   xxl: 1920px,
   xl: 1680px,
@@ -61,7 +58,6 @@ html {
 }
 
 // grid columns
-
 $col-count-m: 4;
 $col-count-t: 8;
 $col-count-d: 12;
@@ -80,13 +76,20 @@ $transition-duration: 0.5s;
 $transition: $transition-duration $transition-timing-function;
 
 // colors
-
+$black: #181d1d;
+$black-icon: #364a46;
+$bg: #fcfcff;
 $black-green: rgb(54 74 70);
 $cold-green: rgb(0 170 136);
+$light-green: rgb(210 246 236);
 $magenta: rgb(221 87 153);
 $magenta-bold: rgb(199 57 127);
 $magenta-light: #ec6eac;
+$pink-light: rgb(253 224 237);
 $grey: rgb(244 244 244);
 $grey2: rgb(243 243 243);
 $grey3: rgb(236 236 236);
 $grey4: rgb(240 240 240);
+$yellow-light: rgb(255 238 210);
+$canary: rgb(251 189 32);
+$blue: rgb(0 151 212);
