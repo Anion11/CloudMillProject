@@ -62,4 +62,14 @@
       background: $cold-green;
     }
   }
+
+  &__map {
+    @media #{media('<',m)} {
+      height: rem(250px);
+    }
+
+    img {
+      height: 100%;
+    }
+  }
 }

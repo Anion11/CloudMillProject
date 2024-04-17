@@ -30,5 +30,6 @@ mixin location(data, mods)
             +ui-p3(card.adress)
           .location__card-hours
             +ui-p3(card.workingHours)
-    +map(data.mapMods ? data.mapMods : '')
+    .location__map
+      +map(data.mapMods ? data.mapMods : '')
     block
