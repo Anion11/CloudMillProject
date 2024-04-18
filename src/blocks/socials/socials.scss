@@ -1,0 +1,25 @@
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: rem(20px);
+
+  @media #{media('<',t)} {
+    flex-direction: column;
+    align-items: unset;
+    gap: 0;
+  }
+
+  &__links {
+    display: flex;
+    gap: rem(21px);
+
+    @media #{media('<',t)} {
+      gap: rem(12px);
+    }
+
+    @media #{media('<',m)} {
+      gap: rem(19px);
+    }
+  }
+}

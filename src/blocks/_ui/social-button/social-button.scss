@@ -1,0 +1,83 @@
+.social-button {
+  display: flex;
+  width: rem(400px);
+  height: rem(400px);
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $grey4;
+  border-radius: 50%;
+  transition: all $transition;
+
+  @media #{media('<',t)} {
+    width: rem(240px);
+    height: rem(240px);
+  }
+
+  @media #{media('<',m)} {
+    width: rem(104px);
+    height: rem(104px);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      border: rem(12px) solid currentColor;
+    }
+  }
+
+  &_vk {
+    color: $vk-blue;
+
+    svg {
+      width: rem(66px);
+      height: rem(40px);
+
+      @media #{media('<',t)} {
+        width: rem(41px);
+        height: rem(26px);
+      }
+
+      @media #{media('<',m)} {
+        width: rem(31px);
+        height: rem(18px);
+      }
+    }
+  }
+
+  &_ok {
+    color: $ok-orange;
+
+    svg {
+      width: rem(64px);
+      height: rem(64px);
+
+      @media #{media('<',t)} {
+        width: rem(45px);
+        height: rem(45px);
+      }
+
+      @media #{media('<',m)} {
+        width: rem(31px);
+        height: rem(31px);
+      }
+    }
+  }
+
+  &_youtube {
+    color: rgb(255 0 0);
+
+    svg {
+      width: rem(65px);
+      height: rem(46px);
+
+      @media #{media('<',t)} {
+        width: rem(43px);
+        height: rem(30px);
+      }
+
+      @media #{media('<',m)} {
+        width: rem(31px);
+        height: rem(21px);
+      }
+    }
+  }
+}

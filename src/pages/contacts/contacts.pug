@@ -2,8 +2,8 @@ extends ../../layout/layout
 
 block variables
   -
-    const pageName = 'main'
-    const pageTitle = 'Main'
+    const pageName = 'contacts'
+    const pageTitle = 'Контакты'
 
   -
     const breadCrumbsData = [
@@ -40,7 +40,7 @@ block content
       +breadcrumbs(breadCrumbsData)
       +section('_mt0')
         +section-head
-          +ui-h1('Контакты')
+          +ui-h1(pageTitle)
         +contact-cards
           +contact-card(contactCardSecretaryData, '_secretary')
             +contact-card-secretary
@@ -49,9 +49,13 @@ block content
           +contact-card(contactCardAdvertisingData, '_advertising')
             +contact-card-advertising
       +section('_mt-xxxs')
-        +section-head
-          p socials-head
-        p socials
+        +socials
+          +social-button('#', '_vk')
+            +social-vk
+          +social-button('#', '_youtube')
+            +social-youtube
+          +social-button('#', '_ok')
+            +social-ok
       +section('_mt-xxxs, _mt-xxxs-desktop')
         +location(locationData)
       +section

@@ -52,8 +52,10 @@
       max-width: fit-content;
       gap: rem(16px);
 
-      &:hover {
-        color: $cold-green;
+      @media (hover: hover) {
+        &:hover {
+          color: $cold-green;
+        }
       }
     }
 
