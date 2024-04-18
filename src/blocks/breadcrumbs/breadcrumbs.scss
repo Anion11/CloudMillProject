@@ -14,8 +14,10 @@
     gap: rem(8px);
     color: $black-green;
 
-    &:hover {
-      color: $cold-green;
+    @media (hover: hover) {
+      &:hover {
+        color: $cold-green;
+      }
     }
 
     &:last-child {

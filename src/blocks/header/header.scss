@@ -136,15 +136,17 @@ $header-top: 24px;
         transition: width $transition;
       }
 
-      &:hover {
-        &::before {
-          width: 100%;
-          background: currentcolor;
-        }
+      @media (hover: hover) {
+        &:hover {
+          &::before {
+            width: 100%;
+            background: currentcolor;
+          }
 
-        &::after {
-          width: 100%;
-          background: unset;
+          &::after {
+            width: 100%;
+            background: unset;
+          }
         }
       }
     }
@@ -178,15 +180,17 @@ $header-top: 24px;
       transition: width $transition;
     }
 
-    &:hover {
-      &::before {
-        width: 100%;
-        background: currentcolor;
-      }
+    @media (hover: hover) {
+      &:hover {
+        &::before {
+          width: 100%;
+          background: currentcolor;
+        }
 
-      &::after {
-        width: 100%;
-        background: 0 0;
+        &::after {
+          width: 100%;
+          background: 0 0;
+        }
       }
     }
   }

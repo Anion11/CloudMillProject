@@ -100,8 +100,10 @@
         }
       }
 
-      a:hover {
-        color: $magenta;
+      @media (hover: hover) {
+        a:hover {
+          color: $magenta;
+        }
       }
     }
   }
@@ -125,8 +127,10 @@
       justify-content: start;
     }
 
-    a:hover {
-      color: $magenta;
+    @media (hover: hover) {
+      a:hover {
+        color: $magenta;
+      }
     }
   }
 
@@ -233,8 +237,10 @@
       grid-column: unset;
     }
 
-    a:hover {
-      color: $magenta;
+    @media (hover: hover) {
+      a:hover {
+        color: $magenta;
+      }
     }
   }
 
@@ -261,8 +267,10 @@
       display: inline-block;
     }
 
-    a:hover {
-      color: $magenta-bold;
+    @media (hover: hover) {
+      a:hover {
+        color: $magenta-bold;
+      }
     }
   }
 

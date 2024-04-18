@@ -35,5 +35,15 @@
         margin-bottom: rem(24px);
       }
     }
+
+    &_desktop-mb0 {
+      &:not(:last-child) {
+        margin-bottom: 0;
+
+        @media #{media('<',t)} {
+          margin-bottom: rem(24px);
+        }
+      }
+    }
   }
 }

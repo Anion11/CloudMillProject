@@ -1,8 +1,8 @@
 import '../styles/style.scss';
 import 'virtual:svg-icons-register';
 import 'lazysizes';
-import { select } from '../blocks/select/select';
-import { input } from '../blocks/input/input';
+import { select } from '../blocks/_ui/select/select';
+import { input } from '../blocks/_ui/input/input';
 import { header } from '../blocks/header/header';
 import { footer } from '../blocks/footer/footer';
 import { contactCard } from '../blocks/cards/contact-card/contact-card';
