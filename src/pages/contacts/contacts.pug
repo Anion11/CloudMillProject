@@ -36,14 +36,24 @@ block variables
 
   -
     const formData = {
-
+      title: 'Связаться с нами',
+      inputs: [
+        { name: 'name', placeholder: 'Ваше имя' },
+        { name: 'E-mail', placeholder: 'E-mail' },
+        { name: 'phone', placeholder: 'Телефон' },
+        { textarea: true,  placeholder: 'Сообщение' }
+      ],
+      footnote: 'Нажимая на кнопку «Отправить» я даю согласие на условия <a href="#">политики в отношении обработки персональных данных</a>',
+      btn: 'Отправить'
     }
 
 block content
   main.main
-    .inner.inner_no-max-w
-      +breadcrumbs(breadCrumbsData)
-      +section('_mt0')
+    +section('_mt0')
+      .inner.inner_no-max-w
+        +breadcrumbs(breadCrumbsData)
+    +section('_mt0')
+      .inner.inner_no-max-w
         +section-head
           +ui-h1(pageTitle)
         +contact-cards
@@ -53,7 +63,8 @@ block content
             +contact-card-sale
           +contact-card(contactCardAdvertisingData, '_advertising')
             +contact-card-advertising
-      +section('_mt-xxxs')
+    +section('_mt-xxxs')
+      .inner.inner_no-max-w
         +socials('Мы в социальных сетях')
           +social-button('#', '_vk')
             +social-vk
@@ -61,8 +72,9 @@ block content
             +social-youtube
           +social-button('#', '_ok')
             +social-ok
-      +section('_mt-xxxs, _mt-xxxs-desktop')
+    +section('_mt-xxxs, _mt-xxxs-desktop')
+      .inner.inner_no-max-w
         +location(locationData)
-      +section
-        .inner_xl
-          +contact-form(formData)
+    +section
+      .inner.inner_xl
+        +contact-form(formData)
