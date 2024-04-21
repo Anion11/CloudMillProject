@@ -86,11 +86,12 @@
 
     &_2 {
       right: 0;
-      bottom: rem(40px);
+      bottom: rem(45px);
       width: rem(224px);
 
       @media #{media('<',t)} {
-        bottom: rem(84px);
+        bottom: rem(90px);
+        right: rem(23px);
         width: rem(103px);
       }
 

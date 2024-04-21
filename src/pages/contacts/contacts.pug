@@ -38,9 +38,9 @@ block variables
     const formData = {
       title: 'Связаться с нами',
       inputs: [
-        { name: 'name', placeholder: 'Ваше имя' },
-        { name: 'E-mail', placeholder: 'E-mail' },
-        { name: 'phone', placeholder: 'Телефон' },
+        { name: 'name', placeholder: 'Ваше имя'},
+        { name: 'email', placeholder: 'E-mail', type: 'email' },
+        { name: 'phone', placeholder: 'Телефон', type: 'tel' },
         { textarea: true,  placeholder: 'Сообщение' }
       ],
       footnote: 'Нажимая на кнопку «Отправить» я даю согласие на условия <a href="#">политики в отношении обработки персональных данных</a>',

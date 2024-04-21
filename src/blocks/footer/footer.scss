@@ -68,6 +68,10 @@
 
   &__logo {
     width: rem(173px);
+
+    @media #{media('<',t)} {
+      display: none;
+    }
   }
 
   &__picture {
@@ -237,6 +241,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
+
+    @media #{media('<',t)} {
+      display: none;
+    }
   }
 
   &__bottom {

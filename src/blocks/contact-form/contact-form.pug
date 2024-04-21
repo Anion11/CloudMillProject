@@ -19,7 +19,7 @@ mixin contact-form(data, mods)
           if input.textarea
             +textarea(placeholder=input.placeholder)
           else
-            +input(input.name)(placeholder=input.placeholder)
+            +input(input.name)(placeholder=input.placeholder type=input.type ? input.type : 'text')
       .contact-form__foot
         +ui-p3(data.footnote, 'contact-form, _desktop-xs')
         +button(data.btn, '', false, 'contact-form')(type='submit')
