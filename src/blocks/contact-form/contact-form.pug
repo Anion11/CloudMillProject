@@ -1,0 +1,30 @@
+mixin contact-form(data, mods)
+  -
+    const baseName = 'contact-form'
+    let allMods = ''
+    if (typeof mods !== 'undefined' && mods) {
+      const modsList = mods.split(',')
+      for (const element of modsList) {
+        allMods += element.trim()[0] === '_' ? ' ' + baseName + element.trim() : ' ' + element.trim() + '__' + baseName
+      }
+      allMods = allMods.trim()
+    }
+
+  form.contact-form(class=allMods action='' method='post' novalidate='')&attributes(attributes)
+    .contact-form__inner
+      +section-head
+        +ui-h2(data.title)
+      .contact-form__body
+        each input of data.inputs
+          if input.textarea
+            +textarea(placeholder=input.placeholder)
+          else
+            +input(input.name)(placeholder=input.placeholder type=input.type ? input.type : 'text')
+      .contact-form__foot
+        +ui-p3(data.footnote, 'contact-form, _desktop-xs')
+        +button(data.btn, '', false, 'contact-form')(type='submit')
+    .contact-form__decor.contact-form__decor_1
+      +contact-form-decor-1
+    .contact-form__decor.contact-form__decor_2
+      +contact-form-decor-2
+    block

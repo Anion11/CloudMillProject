@@ -16,4 +16,14 @@
     font-size: rem(12px);
     line-height: rem(15.6px);
   }
+
+  &_desktop-xs {
+    font: 400 rem(14px) $font-rubik;
+    line-height: rem(16.59px);
+
+    @media #{media('<',t)} {
+      font-size: rem(12px);
+      line-height: rem(15.6px);
+    }
+  }
 }

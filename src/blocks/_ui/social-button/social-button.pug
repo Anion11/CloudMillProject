@@ -10,5 +10,5 @@ mixin social-button(link, mods)
       allMods = allMods.trim()
     }
 
-  a(href=link).social-button(class=allMods)&attributes(attributes)
+  a.social-button(class=allMods href=link)&attributes(attributes)
     block

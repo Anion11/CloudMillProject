@@ -9,6 +9,16 @@
   }
 }
 
+.ui-h2 {
+  font: 600 rem(80px) $font;
+  line-height: 1;
+  letter-spacing: -0.02em;
+
+  @media #{media('<',t)} {
+    font-size: rem(26px);
+  }
+}
+
 .ui-h5 {
   font: 600 rem(32px) $font;
   line-height: rem(32px);

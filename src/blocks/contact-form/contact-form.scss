@@ -1,0 +1,106 @@
+.contact-form {
+  position: relative;
+
+  &__inner {
+    max-width: rem(924px);
+    margin: 0 auto;
+
+    @media #{media('<',t)} {
+      max-width: rem(366px);
+    }
+
+    @media #{media('<',m)} {
+      max-width: unset;
+      padding-top: rem(26px);
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: rem(8px);
+  }
+
+  &__foot {
+    display: flex;
+    align-items: center;
+    gap: rem(120px);
+    margin-top: rem(24px);
+
+    @media #{media('<',t)} {
+      flex-direction: column;
+      gap: rem(28px);
+      margin-top: rem(12px);
+    }
+
+    @media #{media('<',m)} {
+      gap: rem(12px);
+    }
+  }
+
+  &__ui-p3 {
+    max-width: rem(472px);
+    @media #{media('<',t)} {
+      max-width: unset;
+    }
+
+    a {
+      display: inline;
+      color: $cold-green;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $magenta;
+        }
+      }
+    }
+  }
+
+  &__button {
+    flex: 1;
+
+    @media #{media('<',t)} {
+      width: 100%;
+    }
+  }
+
+  &__decor {
+    position: absolute;
+
+    &_1 {
+      top: rem(71px);
+      left: 0;
+      width: rem(236px);
+
+      @media #{media('<',t)} {
+        top: 0;
+        left: rem(32px);
+        width: rem(104px);
+      }
+
+      @media #{media('<',m)} {
+        right: rem(75px);
+        left: unset;
+        width: rem(29px);
+      }
+    }
+
+    &_2 {
+      right: 0;
+      bottom: rem(45px);
+      width: rem(224px);
+
+      @media #{media('<',t)} {
+        bottom: rem(90px);
+        right: rem(23px);
+        width: rem(103px);
+      }
+
+      @media #{media('<',m)} {
+        bottom: unset;
+        top: rem(11px);
+        right: rem(28px);
+        width: rem(46px);
+      }
+    }
+  }
+}

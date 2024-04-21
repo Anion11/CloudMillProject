@@ -7,6 +7,7 @@
   &.textarea-wrapper {
     .input-wrapper-svg {
       top: rem(4px);
+      transform: unset;
       right: rem(10px);
     }
   }
@@ -14,7 +15,8 @@
   &-svg {
     display: none;
     position: absolute;
-    top: rem(6px);
+    top: 50%;
+    transform: translateY(-50%);
     right: rem(10px);
     cursor: pointer;
     width: rem(48px);
@@ -26,7 +28,7 @@
 
     path {
       transition: $transition;
-      stroke: #62215b;
+      stroke: $cold-green;
       opacity: 0.6;
     }
 
@@ -40,16 +42,20 @@
   &__placeholder {
     position: absolute;
     left: rem(24px);
-    top: rem(21px);
+    top: rem(28px);
     transform-origin: left top;
     transition: $transition;
     pointer-events: none;
-    color: var(--1, #62215b);
-    font-size: rem(16px);
-    font-weight: 420;
-    line-height: 110%; /* 17.6px */
-    text-transform: uppercase;
-    opacity: 0.6;
+    color: $black-green;
+    font-size: rem(20px);
+    line-height: 120%;
+    opacity: 0.5;
+
+    @media #{media('<',t)} {
+      left: rem(16px);
+      top: rem(16px);
+      font-size: rem(14px);
+    }
 
     &.custom-map {
       top: rem(20px);
@@ -90,31 +96,36 @@
 }
 
 .input {
-  &-dark {
-    background: #f8f4f8;
-    border: 1px solid var(--unnamed, #f0e7ef);
-  }
-
   width: 100%;
-  height: rem(60px);
-  caret-color: #62215b;
-  border-radius: rem(8px);
-  border: 1px solid var(--unnamed, #f0e7ef);
-  background: #f8f4f8;
+  height: rem(80px);
+  padding: rem(28px) rem(24px) rem(28px);
+  caret-color: $black-green;
+  border-radius: rem(16px);
+  border: 1px solid transparent;
+  background: $grey2;
   transition: $transition;
-  color: var(--unnamed, #62215b);
-  font-size: rem(16px);
-  font-weight: 420;
-  line-height: 110%;
-  padding: rem(29px) rem(62px) rem(22px) rem(24px);
+  color: $black-green;
+  font-size: rem(20px);
+  line-height: 120%;
   caret-width: 1px;
+
+  @media #{media('<',t)} {
+    height: rem(50px);
+    padding: rem(16px);
+  }
 
   &::placeholder {
     opacity: 0;
   }
 
+  @media (hover: hover) {
+    &:hover {
+      background: $grey5;
+    }
+  }
+
   &:focus {
-    border: 1px solid var(--1, #62215b);
+    border: 1px solid $cold-green;
     box-shadow: 0px rem(10px) rem(16px) rgba(0, 0, 0, 0.05);
   }
 

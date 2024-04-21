@@ -1,12 +1,13 @@
 .button {
   position: relative;
   display: flex;
-  gap: rem(16px);
-  padding: rem(25px) rem(24px);
-  border-radius: rem(16px);
-  background: $magenta;
   justify-content: center;
   align-items: center;
+  gap: rem(16px);
+  padding: rem(25px) rem(24px);
+  border: unset;
+  border-radius: rem(16px);
+  background: $magenta;
   font: 500 rem(18px) $font-rubik;
   text-align: center;
   color: #fff;
@@ -82,23 +83,8 @@
       }
     }
 
-    &-pd0 {
-      width: rem(74px);
-      height: rem(74px);
-      padding: 0;
-
-      @media #{media('<',t)} {
-        width: rem(48px);
-        height: rem(48px);
-      }
-    }
-
     &-reverse {
       flex-direction: row-reverse;
-    }
-
-    &-border {
-      border: 2px solid $grey3;
     }
   }
 
