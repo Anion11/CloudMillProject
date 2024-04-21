@@ -140,11 +140,49 @@
     margin-top: rem(86px);
 
     @media #{media('<',t)} {
+      display: none;
       grid-area: social;
       margin-top: 0;
     }
 
     &-button {
+      display: flex;
+      width: rem(74px);
+      height: rem(74px);
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      border: 2px solid $grey3;
+      border-radius: rem(16px);
+      background: #fff;
+      color: $black-green;
+
+      @media #{media('<',t)} {
+        border-radius: rem(8px);
+      }
+
+      svg {
+        width: rem(24px);
+        height: rem(24px);
+
+        @media #{media('<',t)} {
+          width: rem(16px);
+          height: rem(16px);
+        }
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          color: #fff;
+          background: $black-green;
+        }
+      }
+
+      @media #{media('<',t)} {
+        width: rem(48px);
+        height: rem(48px);
+      }
+
       &_vk {
         svg {
           width: rem(25px);
@@ -267,9 +305,13 @@
       display: inline-block;
     }
 
-    @media (hover: hover) {
-      a:hover {
-        color: $magenta-bold;
+    a {
+      color: $magenta;
+
+      @media (hover: hover) {
+        &:hover {
+          color: $cold-green;
+        }
       }
     }
   }

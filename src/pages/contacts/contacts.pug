@@ -34,6 +34,11 @@ block variables
       ]
     }
 
+  -
+    const formData = {
+
+    }
+
 block content
   main.main
     .inner.inner_no-max-w
@@ -49,7 +54,7 @@ block content
           +contact-card(contactCardAdvertisingData, '_advertising')
             +contact-card-advertising
       +section('_mt-xxxs')
-        +socials
+        +socials('Мы в социальных сетях')
           +social-button('#', '_vk')
             +social-vk
           +social-button('#', '_youtube')
@@ -59,6 +64,5 @@ block content
       +section('_mt-xxxs, _mt-xxxs-desktop')
         +location(locationData)
       +section
-        +section-head
-          p form-head
-        p form
+        .inner_xl
+          +contact-form(formData)

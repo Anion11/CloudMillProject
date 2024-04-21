@@ -82,23 +82,8 @@
       }
     }
 
-    &-pd0 {
-      width: rem(74px);
-      height: rem(74px);
-      padding: 0;
-
-      @media #{media('<',t)} {
-        width: rem(48px);
-        height: rem(48px);
-      }
-    }
-
     &-reverse {
       flex-direction: row-reverse;
-    }
-
-    &-border {
-      border: 2px solid $grey3;
     }
   }
 

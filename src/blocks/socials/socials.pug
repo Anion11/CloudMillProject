@@ -1,4 +1,4 @@
-mixin socials(mods)
+mixin socials(title, mods)
   -
     const baseName = 'socials'
     let allMods = ''
@@ -12,6 +12,6 @@ mixin socials(mods)
 
   .socials(class=allMods)&attributes(attributes)
     +section-head('_desktop-mb0')
-      +ui-h5('Мы в социальных сетях')
+      +ui-h5(title)
     .socials__links
       block

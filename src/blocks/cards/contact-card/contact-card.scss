@@ -51,12 +51,6 @@
       align-items: center;
       max-width: fit-content;
       gap: rem(16px);
-
-      @media (hover: hover) {
-        &:hover {
-          color: $cold-green;
-        }
-      }
     }
 
     &-svg {
@@ -71,6 +65,45 @@
       svg {
         width: rem(20px);
         height: rem(20px);
+      }
+    }
+  }
+
+  &__ui-p1 {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -5%;
+      left: 0;
+      width: 0;
+      height: rem(2px);
+      transition: width $transition;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5%;
+      right: 0;
+      width: 0;
+      height: rem(2px);
+      background: currentcolor;
+      transition: width $transition;
+    }
+
+    @media (hover: hover) {
+      &:hover {
+        &::before {
+          width: 100%;
+          background: currentcolor;
+        }
+
+        &::after {
+          width: 100%;
+          background: unset;
+        }
       }
     }
   }

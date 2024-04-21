@@ -23,12 +23,12 @@ mixin contact-card(data, mods)
         a.contact-card__foot-item(href='tel:' + currentTel)
           .contact-card__foot-svg
             +contact-tel
-          +ui-p1(data.tel)
+          +ui-p1(data.tel, 'contact-card')
       if data.mail
         a.contact-card__foot-item(href='mailto:' + data.mail)
           .contact-card__foot-svg
             +contact-mail
-          +ui-p1(data.mail)
+          +ui-p1(data.mail, 'contact-card')
     .contact-card__decor
       block
 
