@@ -1,13 +1,12 @@
 .textarea {
-  padding: rem(28px) rem(24px) rem(24px);
+  padding: rem(28px) rem(46px) rem(24px) rem(24px);
   height: rem(181px);
   width: 100%;
   caret-color: $black-green;
   resize: none;
-  overflow: hidden;
   border-radius: rem(16px);
   border: 1px solid transparent;
-  background: $grey2;
+  background: transparent;
   justify-content: center;
   align-items: center;
   transition: $transition;
@@ -17,7 +16,7 @@
 
   @media #{media('<',t)} {
     height: rem(161px);
-    padding: rem(16px);
+    padding: rem(16px) rem(46px) rem(16px) rem(16px);
     font-size: rem(14px);
   }
 
@@ -25,15 +24,9 @@
     opacity: 0;
   }
 
-  @media (hover: hover) {
-    &:hover {
-      background: $grey5;
-    }
-  }
-
   &:focus {
     border: 1px solid $cold-green;
-    box-shadow: 0px rem(10px) rem(16px) rgba(0, 0, 0, 0.05);
+    box-shadow: 0 rem(10px) rem(16px) rgba(0, 0, 0, 0.05);
   }
 
   &.parsley-error {

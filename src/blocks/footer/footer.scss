@@ -303,10 +303,12 @@
   &__dev {
     display: flex;
     justify-content: flex-end;
+    margin-right: rem(63px);
 
     @media #{media('<',t)} {
       grid-area: dev;
       justify-content: flex-start;
+      margin-right: unset;
     }
 
     span {
